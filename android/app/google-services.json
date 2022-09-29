@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1095640296631",
+    "project_id": "fireworks-fdc20",
+    "storage_bucket": "fireworks-fdc20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095640296631:android:2cd5b5e3f37134df577132",
+        "android_client_info": {
+          "package_name": "jp.anankosen.fireworks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095640296631-ehsn6l8pjue1c7mij13jgrc5m325ma32.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYStzT1AxPUwsGaLCJxzSln35sFYythKI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095640296631-ehsn6l8pjue1c7mij13jgrc5m325ma32.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1095640296631-1lufplqufs16vhq3cvuh5tct5ol7a95d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "jp.anan-nct.fireworks"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
