@@ -12,7 +12,6 @@ import 'package:flutter/rendering.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 Future<void> main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
   //debugPaintSizeEnabled = true;
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
@@ -26,29 +25,28 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
-      title: '花火シンクロ',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: FutureBuilder(
-        future:_fbApp,
-        builder: (context, snapshot) {
-          if(snapshot.hasError){
-            print('You have an error! ${snapshot.error.toString()}');
-            return Text('Something went wrong!');
-          }else if (snapshot.hasData){
-            return MyHomePage(title: 'Flutter Demo Home Page');
-          }else{
-            return Center (
-              child: CircularProgressIndicator(),
-            );
-          }
-        },
-      )
-      //MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+        title: '花火シンクロ',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: FutureBuilder(
+          future: _fbApp,
+          builder: (context, snapshot) {
+            if (snapshot.hasError) {
+              print('You have an error! ${snapshot.error.toString()}');
+              return Text('Something went wrong!');
+            } else if (snapshot.hasData) {
+              return MyHomePage(title: 'Flutter Demo Home Page');
+            } else {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+          },
+        )
+        //MyHomePage(title: 'Flutter Demo Home Page'),
+        );
   }
 }
 /*class SpaceBox extends SizedBox {
@@ -69,11 +67,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   void _incrementCounter() {
-    setState(() {
-
-    });
+    setState(() {});
   }
 
   @override
@@ -84,117 +79,105 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("花火シンクロ"),
         backgroundColor: Colors.black,
       ),
-      body:  Container(
+      body: Container(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children:[
+          children: [
             Container(
               margin: EdgeInsets.only(top: 50.0),
               height: 800.0,
-              child:Column(
-                  children:[
-                    SizedBox(
-                      width: 300,
-                      height: 80,
-                      child: ElevatedButton(
-                        child: const Text('観客としてアプリを使用する',
-                          style:  TextStyle(
-                              fontSize: 18),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.orange,
-                          onPrimary: Colors.white,
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => audience01()),
-                          );
-                        },
-                      ),
+              child: Column(children: [
+                SizedBox(
+                  width: 300,
+                  height: 80,
+                  child: ElevatedButton(
+                    child: const Text(
+                      '観客としてアプリを使用する',
+                      style: TextStyle(fontSize: 18),
+                    ), //Orange button
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.orange,
+                      onPrimary: Colors.white,
                     ),
-
-                    SpaceBox.height(50),
-
-                    SizedBox(
-                      width: 300,
-                      height: 80,
-                      child: ElevatedButton(
-                        child: const Text('主催者としてアプリを使用する',
-                          style:  TextStyle(
-                              fontSize: 18),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.blue,
-                          onPrimary: Colors.white,
-                        ),
-                        onPressed: () {
-                          //_testRef.update({'price': 2.99});
-                           // _testRef.set({'description': 'Vanilla latte', 'price': 4.99});
-                          //_testRef.set({"Helloworld! ${Random().nextInt(100)}");
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Login() ), // HanabiList()),
-                          );
-                        },
-                      ),
-
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => audience01()),
+                      );
+                    },
+                  ),
+                ),
+                SpaceBox.height(50),
+                SizedBox(
+                  width: 300,
+                  height: 80,
+                  child: ElevatedButton(
+                    child: const Text(
+                      '主催者としてアプリを使用する',
+                      style: TextStyle(fontSize: 18),
                     ),
-                    SpaceBox.height(50),
-                    Container(
-
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            const Text('協賛企業',
-                              style:  TextStyle(
-                                  fontSize: 18),
-                            ),
-                            SpaceBox.height(10),
-                            Row(
-
-                                children: [
-                                  const Text('企業A',
-                                    style:  TextStyle(
-                                        fontSize: 18),
-                                  ),
-                                  SpaceBox.width(20),
-                                  const Text('企業B',
-                                    style:  TextStyle(
-                                        fontSize: 18),
-                                  ),
-                                  SpaceBox.width(20),
-                                  const Text('企業C',
-                                    style:  TextStyle(
-                                        fontSize: 18),
-                                  )
-                                ]
-                            ),
-                            SpaceBox.height(10),
-                            Row(
-
-                                children: [
-                                  const Text('企業D',
-                                    style:  TextStyle(
-                                        fontSize: 18),
-                                  ),
-                                  SpaceBox.width(20),
-                                  const Text('企業E',
-                                    style:  TextStyle(
-                                        fontSize: 18),
-                                  ),
-                                  SpaceBox.width(20),
-                                  const Text('企業F',
-                                    style:  TextStyle(
-                                        fontSize: 18),
-                                  )
-                                ]
-                            )
-                          ]
-                      ),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.blue,
+                      onPrimary: Colors.white,
                     ),
-                  ]
-              ),
+                    onPressed: () {
+                      //_testRef.update({'price': 2.99});
+                      // _testRef.set({'description': 'Vanilla latte', 'price': 4.99});
+                      //_testRef.set({"Helloworld! ${Random().nextInt(100)}");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Login()), // HanabiList()),
+                      );
+                    },
+                  ),
+                ),
+                SpaceBox.height(50),
+                Container(
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        const Text(
+                          '協賛企業',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                        SpaceBox.height(10),
+                        Row(children: [
+                          const Text(
+                            '企業A',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          SpaceBox.width(20),
+                          const Text(
+                            '企業B',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          SpaceBox.width(20),
+                          const Text(
+                            '企業C',
+                            style: TextStyle(fontSize: 18),
+                          )
+                        ]),
+                        SpaceBox.height(10),
+                        Row(children: [
+                          const Text(
+                            '企業D',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          SpaceBox.width(20),
+                          const Text(
+                            '企業E',
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          SpaceBox.width(20),
+                          const Text(
+                            '企業F',
+                            style: TextStyle(fontSize: 18),
+                          )
+                        ])
+                      ]),
+                ),
+              ]),
             ),
           ],
         ),
@@ -206,5 +189,4 @@ class _MyHomePageState extends State<MyHomePage> {
       //), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-
 }
