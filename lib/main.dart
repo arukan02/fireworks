@@ -93,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: ElevatedButton(
                     child: const Text(
                       '観客としてアプリを使用する',
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(fontSize: 18, fontFamily: 'Raleway'),
                     ), //Orange button
                     style: ElevatedButton.styleFrom(
                       primary: Colors.orange,
